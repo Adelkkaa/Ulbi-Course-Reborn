@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tes
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   someFn: () => (/* binding */ someFn)\n/* harmony export */ });\nfunction someFn(arg) {\n    console.log('RANDOM FUNCTION', arg);\n    return '';\n}\n\n\n//# sourceURL=webpack://ulbi-react/./src/test.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   someFn: () => (/* binding */ someFn)\n/* harmony export */ });\nfunction someFn(arg) {\n    console.log('RANDOM FUNCT', arg);\n    return '';\n}\n\n\n//# sourceURL=webpack://ulbi-react/./src/test.ts?");
 
 /***/ })
 
