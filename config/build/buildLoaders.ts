@@ -8,8 +8,17 @@ export const buildLoaders = (): webpack.ModuleOptions => {
         exclude: /node_modules/,
       }
 
+      const sassLoader = {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      }
+
     return {
-        rules: [tsLoader]
+        rules: [tsLoader, sassLoader]
     }
 
 }
