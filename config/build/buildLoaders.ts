@@ -19,7 +19,8 @@ export const buildLoaders = ({
         loader: "css-loader",
         options: {
           modules: {
-            auto: (resourcePath: string) => Boolean(resourcePath.includes(".module.")),
+            auto: (resourcePath: string) =>
+              Boolean(resourcePath.includes(".module.")),
             localIdentName: isDev
               ? "[path][name]__[local]--[hash:base64:5]"
               : "[hash:base64:8]",
@@ -30,7 +31,22 @@ export const buildLoaders = ({
     ],
   };
 
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
   return {
-    rules: [tsLoader, sassLoader],
+    rules: [tsLoader, sassLoader, svgLoader, fileLoader],
   };
 };
