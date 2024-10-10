@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export const buildLoaders = ({
     isDev,
@@ -11,24 +12,8 @@ export const buildLoaders = ({
         exclude: /node_modules/,
     };
 
-    const sassLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
-                        localIdentName: isDev
-                            ? '[path][name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]',
-                    },
-                },
-            },
-            'sass-loader',
-        ],
-    };
+    const cssLoader = buildCssLoader(isDev);
+
 
     const svgLoader = {
         test: /\.svg$/i,
@@ -66,6 +51,6 @@ export const buildLoaders = ({
 };
 
   return {
-    rules: [ sassLoader, svgLoader, fileLoader, babelLoader, tsLoader ],
+    rules: [ cssLoader, svgLoader, fileLoader, babelLoader, tsLoader ],
   };
 };
