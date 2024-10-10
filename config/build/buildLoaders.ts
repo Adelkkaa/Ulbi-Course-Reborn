@@ -14,7 +14,6 @@ export const buildLoaders = ({
 
     const cssLoader = buildCssLoader(isDev);
 
-
     const svgLoader = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
@@ -30,27 +29,27 @@ export const buildLoaders = ({
         ],
     };
 
-  const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-        loader: 'babel-loader',
-        options: {
-            presets: ['@babel/preset-env'],
-            plugins: [
-                [
-                    'i18next-extract',
-                    {
-                        locales: ['ru', 'en'],
-                        keyAsDefaultValue: true,
-                    },
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+                plugins: [
+                    [
+                        'i18next-extract',
+                        {
+                            locales: ['ru', 'en'],
+                            keyAsDefaultValue: true,
+                        },
+                    ],
                 ],
-            ],
+            },
         },
-    },
-};
+    };
 
-  return {
-    rules: [ cssLoader, svgLoader, fileLoader, babelLoader, tsLoader ],
-  };
+    return {
+        rules: [cssLoader, svgLoader, fileLoader, babelLoader, tsLoader],
+    };
 };

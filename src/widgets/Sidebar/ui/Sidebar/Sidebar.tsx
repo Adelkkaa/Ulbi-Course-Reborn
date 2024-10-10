@@ -21,7 +21,7 @@ export const Sidebar: FC<ISidebarProps> = ({ className }) => {
             ])}
         >
             <Button data-testid="sidebar-toggle" onClick={onToggle}>
-                toggle
+                -
             </Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
