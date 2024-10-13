@@ -13,14 +13,8 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
     const { t } = useTranslation();
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
-            <ThemeSwitcher />
             <nav className={cls.links}>
-                <AppLink theme={AppLinkTheme.SECONDARY} className={cls.mainLink} to="/">
-                    {t('Главная')}
-                </AppLink>
-                <AppLink theme={AppLinkTheme.RED} to="/about">
-                    {t('О сайте')}
-                </AppLink>
+                /
             </nav>
         </header>
     );
