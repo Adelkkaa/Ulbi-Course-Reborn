@@ -5,6 +5,7 @@ import {
 } from 'shared/ui';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { useTranslation } from 'react-i18next';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface INavbarProps {
@@ -16,22 +17,26 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
 
     const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsOpenAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsOpenAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsOpenAuthModal(true);
     }, []);
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
-                onClick={onToggleModal}
+                onClick={onShowModal}
                 className={cls.links}
             >
                 {t('Войти')}
             </Button>
-            <Modal isOpen={isOpenAuthModal} onClose={onToggleModal}>
-                {/* eslint-disable-next-line */}
-                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.')}
-            </Modal>
+            <LoginModal
+                isOpen={isOpenAuthModal}
+                onClose={onCloseModal}
+            />
         </header>
     );
 };
