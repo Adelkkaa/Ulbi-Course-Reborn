@@ -59,7 +59,6 @@ export const Modal: FC<IModalProps> = ({
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true, // Для каноничности курса оставляю эту реализацию, потом по ходу поменяем
     };
 
     return (
