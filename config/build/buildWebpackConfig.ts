@@ -10,7 +10,7 @@ export const buildWebpackConfig = (
 ): webpack.Configuration => {
     const { isDev, paths } = options;
     return {
-        mode: 'development',
+        mode: options.mode,
         entry: paths.entry,
         output: {
             filename: '[name].[contenthash].js',
