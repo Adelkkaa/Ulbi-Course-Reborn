@@ -4,7 +4,7 @@ import { buildCssLoader } from './loaders/buildCssLoader';
 
 export const buildLoaders = ({
     isDev,
-}: Pick<BuildOptions, 'isDev'>): webpack.ModuleOptions => {
+}: Pick<BuildOptions, 'isDev'>): webpack.RuleSetRule[] => {
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -48,7 +48,11 @@ export const buildLoaders = ({
         },
     };
 
-    return {
-        rules: [cssLoader, svgLoader, fileLoader, babelLoader, tsLoader],
-    };
+    return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
+        tsLoader,
+        cssLoader,
+    ];
 };
