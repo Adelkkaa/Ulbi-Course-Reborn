@@ -5,7 +5,11 @@ import { Input } from 'shared/ui/Input/Input';
 import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
@@ -16,14 +20,15 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
-    className?: string;
+  className?: string;
+  onSuccess: () => void;
 }
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
-    const dispatch = useDispatch();
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+    const dispatch = useAppDispatch();
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -32,32 +37,55 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 
     const { t } = useTranslation();
 
-    const onChangeUsername = useCallback((value: string) => {
-        dispatch(loginActions.setUsername(value));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
-    const onSubmitLoginForm = useCallback((e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+    const onSubmitLoginForm = useCallback(
+        async (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
 
-        const username = formData.get('username');
-        const password = formData.get('password');
+            const username = formData.get('username');
+            const password = formData.get('password');
 
-        dispatch(loginByUsername({ username: username.toString(), password: password.toString() }));
-    }, [dispatch]);
+            const result = await dispatch(
+                loginByUsername({
+                    username: username.toString(),
+                    password: password.toString(),
+                }),
+            );
+
+            if (result.meta.requestStatus === 'fulfilled') {
+                onSuccess();
+            }
+        },
+        [dispatch, onSuccess],
+    );
 
     return (
-        <DynamicModuleLoader
-            removeAfterUnmount
-            reducers={initialReducers}
-        >
-            <form onSubmit={onSubmitLoginForm} className={classNames(cls.LoginForm, {}, [className])}>
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
+            <form
+                onSubmit={onSubmitLoginForm}
+                className={classNames(cls.LoginForm, {}, [className])}
+            >
                 <Text title={t('Форма авторизации')} />
-                {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+                {error && (
+                    <Text
+                        text={t('Вы ввели неверный логин или пароль')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     name="username"
                     autofocus
