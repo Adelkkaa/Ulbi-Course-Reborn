@@ -56,13 +56,13 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
 
-            const username = formData.get('username');
-            const password = formData.get('password');
+            const username = formData.get('username') as string;
+            const password = formData.get('password') as string;
 
             const result = await dispatch(
                 loginByUsername({
-                    username: username.toString(),
-                    password: password.toString(),
+                    username,
+                    password,
                 }),
             );
 
