@@ -52,6 +52,19 @@ OutlineSizeXl.args = {
     size: ButtonSize.XL,
 };
 
+export const OutlineRed = Template.bind({});
+OutlineRed.args = {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+};
+
+export const OutlineRedDark = Template.bind({});
+OutlineRedDark.args = {
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+};
+OutlineRedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
     children: 'Text',
