@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -119,11 +121,11 @@
   "profile": {
     "first": "jgh",
     "lastname": "asf",
-    "age": 465,
+    "age": 2222,
     "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
+    "country": "Armenia",
+    "city": "Armenia-City",
     "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Auguste_clown_reading_a_book_upside-down.jpg/800px-Auguste_clown_reading_a_book_upside-down.jpg"
   }
 }

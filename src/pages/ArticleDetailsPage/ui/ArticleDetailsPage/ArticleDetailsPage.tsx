@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
-import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -16,14 +15,14 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <div className={classNames('', {}, [className])}>
                 {t('Статья не найдена')}
             </div>
         );
     }
 
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <ArticleDetails id={id} />
         </div>
     );
