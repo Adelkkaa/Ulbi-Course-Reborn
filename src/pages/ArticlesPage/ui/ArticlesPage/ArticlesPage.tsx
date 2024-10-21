@@ -9,7 +9,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'shared/ui';
+import { Page } from 'widgets/Page/Page';
 import {
     articlesPageActions,
     articlesPageReducer,
