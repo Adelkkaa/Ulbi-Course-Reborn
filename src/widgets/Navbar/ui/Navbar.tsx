@@ -1,17 +1,17 @@
 import { FC, useCallback, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppLink,
     AppLinkTheme,
     Button, ButtonTheme,
     Text,
     TextTheme,
-} from 'shared/ui';
-import { useTranslation } from 'react-i18next';
-import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+} from '@/shared/ui';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { getUserAuthData, userActions } from '@/entities/User';
+import { LoginModal } from '@/features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface INavbarProps {

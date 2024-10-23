@@ -1,18 +1,18 @@
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-import { ILoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
-import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { AddCommentFormSchema } from 'features/AddCommentForm';
-import { ArticlesPageSchema } from 'pages/ArticlesPage/model/types/articlesPageSchema';
-import { UISchema } from 'features/UI';
+import { ProfileSchema } from '@/entities/Profile';
+import { UserSchema } from '@/entities/User';
+import { CounterSchema } from '@/entities/Counter';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { ILoginSchema } from '@/features/AuthByUsername';
+import { AddCommentFormSchema } from '@/features/AddCommentForm';
+import { UISchema } from '@/features/UI';
+import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage/model/types/articlesPageSchema';
 
 export interface StateSchema {
     counter: CounterSchema;
