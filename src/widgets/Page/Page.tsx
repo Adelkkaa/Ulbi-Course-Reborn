@@ -18,6 +18,8 @@ interface PageProps {
     onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = 'PAGE_ID';
+
 export const Page = memo((props: PageProps) => {
     const { className, children, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -47,6 +49,7 @@ export const Page = memo((props: PageProps) => {
 
     return (
         <section
+            id={PAGE_ID}
             ref={wrapperRef}
             onScroll={onScroll}
             className={classNames(cls.Page, {}, [className])}
