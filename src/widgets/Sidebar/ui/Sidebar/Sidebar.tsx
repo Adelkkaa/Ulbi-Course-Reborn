@@ -7,6 +7,7 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { VStack } from '@/shared/ui';
 
 interface SidebarProps {
     className?: string;
@@ -42,9 +43,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-            <nav className={cls.items}>
+            <VStack gap="8" className={cls.items}>
                 {itemsList}
-            </nav>
+            </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher
