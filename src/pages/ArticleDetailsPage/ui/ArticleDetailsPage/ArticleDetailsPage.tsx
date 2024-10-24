@@ -10,9 +10,6 @@ import { CommentList } from '@/entities/Comment';
 import { ArticleDetails, ArticleList } from '@/entities/Article';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { Page } from '@/widgets/Page/Page';
-import {
-    fetchCommentsByArticleId,
-} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import cls from './ArticleDetailsPage.module.scss';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -22,6 +19,7 @@ import { getArticleRecommendations } from '../../model/slices/articleDetailsPage
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 interface ArticleDetailsPageProps {
     className?: string;

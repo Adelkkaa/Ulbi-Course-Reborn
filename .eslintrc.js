@@ -18,7 +18,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'fsd-checker-by-adelkkaa',
+    ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -29,10 +35,7 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': [
-            'warn',
-            { argsIgnorePattern: '^_' },
-        ],
+        'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -43,7 +46,10 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name', 'target'] },
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid', 'to', 'name', 'target'],
+            },
         ],
         'max-len': ['error', { ignoreComments: true, code: 130 }],
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -53,6 +59,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'fsd-checker-by-adelkkaa/fsd-path-checker': 'error',
     },
     overrides: [
         {

@@ -5,8 +5,8 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import avatar from '@/shared/assets/tests/avatar.jpg';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import ProfilePage from '@/pages/ProfilePage/ui/ProfilePage';
 import { Theme } from '@/app/providers/ThemeProvider';
+import ProfilePage from './ProfilePage';
 
 export default {
     title: 'pages/ProfilePage',
