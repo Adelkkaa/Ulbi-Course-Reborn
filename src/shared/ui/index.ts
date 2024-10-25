@@ -5,3 +5,5 @@ export { Input } from './Input/Input';
 export { Text, TextTheme } from './Text/Text';
 export { HStack, VStack } from './Stack';
 export { ListBox, ListBoxItem } from './ListBox/ListBox';
+export { Dropdown, DropdownItem } from './Dropdown/Dropdown';
+export { Avatar } from './Avatar/Avatar';
