@@ -60,6 +60,7 @@ module.exports = {
                     'role',
                     'as',
                     'disabled',
+                    'border',
                 ],
             },
         ],

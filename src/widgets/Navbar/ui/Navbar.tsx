@@ -8,6 +8,7 @@ import {
     Avatar,
     Button, ButtonTheme,
     Dropdown,
+    HStack,
     Text,
     TextTheme,
 } from '@/shared/ui';
@@ -17,6 +18,8 @@ import {
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import cls from './Navbar.module.scss';
+import { NotificationButton } from '@/features/notificationButton';
+import { AvatarDropdown } from '@/features/avatarDropdown';
 
 interface INavbarProps {
   className?: string;
@@ -60,25 +63,10 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Dropdown
-                    direction="bottom left"
-                    className={cls.dropdown}
-                    items={[
-                        ...(isAdminPanelAvailable ? [{
-                            content: t('Админка'),
-                            href: RoutePath.admin_panel,
-                        }] : []),
-                        {
-                            content: t('Профиль'),
-                            href: RoutePath.profile + authData.id,
-                        },
-                        {
-                            content: t('Выйти'),
-                            onClick: onLogout,
-                        },
-                    ]}
-                    trigger={<Avatar size={30} src={authData.avatar} />}
-                />
+                <HStack gap="16" className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
             </header>
         );
     }
