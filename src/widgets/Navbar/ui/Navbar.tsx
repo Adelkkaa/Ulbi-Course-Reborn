@@ -1,21 +1,18 @@
 import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppLink,
     AppLinkTheme,
-    Avatar,
-    Button, ButtonTheme,
-    Dropdown,
+    Button,
+    ButtonTheme,
     HStack,
     Text,
     TextTheme,
 } from '@/shared/ui';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import cls from './Navbar.module.scss';
 import { NotificationButton } from '@/features/notificationButton';
@@ -30,9 +27,6 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
 
     const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
-    const dispatch = useDispatch();
-    const isAdmin = useSelector(isUserAdmin);
-    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsOpenAuthModal(false);
@@ -41,12 +35,6 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
     const onShowModal = useCallback(() => {
         setIsOpenAuthModal(true);
     }, []);
-
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout());
-    }, [dispatch]);
-
-    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (authData) {
         return (
@@ -80,10 +68,7 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
                 {t('Войти')}
             </Button>
             {isOpenAuthModal && (
-                <LoginModal
-                    isOpen={isOpenAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isOpenAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

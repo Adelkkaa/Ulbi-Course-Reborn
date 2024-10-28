@@ -7,3 +7,5 @@ export { HStack, VStack } from './Stack';
 export { ListBox, type ListBoxItem } from './Popups/components/ListBox/ListBox';
 export { Dropdown, type DropdownItem } from './Popups/components/Dropdown/Dropdown';
 export { Avatar } from './Avatar/Avatar';
+export { Overlay } from './Overlay/Overlay';
+export { Drawer } from './Drawer/Drawer';
