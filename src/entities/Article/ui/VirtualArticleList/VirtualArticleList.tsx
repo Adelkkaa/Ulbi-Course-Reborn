@@ -4,8 +4,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './VirtualArticleList.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { PAGE_ID } from '@/widgets/Page/Page';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 interface VirtualArticleListProps {
   className?: string;

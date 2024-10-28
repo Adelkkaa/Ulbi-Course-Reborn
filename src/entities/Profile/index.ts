@@ -1,9 +1,3 @@
-export {
-    Profile,
-    ProfileSchema,
-    ValidateProfileError,
-} from './model/types/profile';
+export type { Profile, ProfileSchema } from './model/types/profile';
 
-export {
-    ProfileCard,
-} from './ui/ProfileCard/ProfileCard';
+export { ProfileCard } from './ui/ProfileCard/ProfileCard';
