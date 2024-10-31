@@ -3,7 +3,6 @@ import {
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 import { ProfileSchema } from '@/entities/Profile';
 import { UserSchema } from '@/entities/User';
 import { CounterSchema } from '@/entities/Counter';
@@ -11,8 +10,8 @@ import { ArticleDetailsSchema } from '@/entities/Article';
 import { ILoginSchema } from '@/features/AuthByUsername';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
 import { UISchema } from '@/features/UI';
-import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
-import { ArticlesPageSchema } from '@/pages/ArticlesPage/model/types/articlesPageSchema';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {

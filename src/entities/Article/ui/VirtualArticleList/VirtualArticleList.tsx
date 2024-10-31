@@ -5,7 +5,7 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './VirtualArticleList.module.scss';
 import { Article } from '../../model/types/article';
-import { PAGE_ID } from '@/widgets/Page/Page';
+import { PAGE_ID } from '@/widgets/Page';
 import { ArticleView } from '../../model/consts/articleConsts';
 
 interface VirtualArticleListProps {

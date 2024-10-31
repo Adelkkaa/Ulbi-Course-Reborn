@@ -7,7 +7,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

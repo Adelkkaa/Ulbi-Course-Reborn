@@ -72,7 +72,19 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'fsd-checker-by-adelkkaa/fsd-path-checker': ['error', { alias: '@' }],
+        'fsd-checker-by-adelkkaa/fsd-path-checker': [
+            'error',
+            {
+                alias: '@',
+            },
+        ],
+        'fsd-checker-by-adelkkaa/fsd-public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     overrides: [
         {
