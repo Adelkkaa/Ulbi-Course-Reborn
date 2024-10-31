@@ -72,7 +72,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'fsd-checker-by-adelkkaa/fsd-path-checker': 'error',
+        'fsd-checker-by-adelkkaa/fsd-path-checker': ['error', { alias: '@' }],
     },
     overrides: [
         {
