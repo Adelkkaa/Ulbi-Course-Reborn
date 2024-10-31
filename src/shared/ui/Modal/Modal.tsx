@@ -1,5 +1,5 @@
 import React, {
-    FC, useCallback, useEffect, useRef, useState,
+    FC,
 } from 'react';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';

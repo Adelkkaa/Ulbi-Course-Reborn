@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { AppLink, VStack } from '@/shared/ui';
 import cls from './CommentCard.module.scss';

@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { AvatarDropdown } from './AvatarDropdown';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
 
 export default {
     title: 'features/AvatarDropdown',
