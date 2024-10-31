@@ -11,12 +11,12 @@ import {
     Text,
     TextTheme,
 } from '@/shared/ui';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import cls from './Navbar.module.scss';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
+import { RoutePath } from '@/shared/const/router';
 
 interface INavbarProps {
   className?: string;
