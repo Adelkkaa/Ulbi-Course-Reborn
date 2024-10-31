@@ -78,6 +78,13 @@ module.exports = {
                 alias: '@',
             },
         ],
+        'fsd-checker-by-adelkkaa/fsd-layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'fsd-checker-by-adelkkaa/fsd-public-api-imports': [
             'error',
             {

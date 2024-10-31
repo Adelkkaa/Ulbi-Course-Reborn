@@ -5,6 +5,7 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './VirtualArticleList.module.scss';
 import { Article } from '../../model/types/article';
+// eslint-disable-next-line fsd-checker-by-adelkkaa/fsd-layer-imports
 import { PAGE_ID } from '@/widgets/Page';
 import { ArticleView } from '../../model/consts/articleConsts';
 
