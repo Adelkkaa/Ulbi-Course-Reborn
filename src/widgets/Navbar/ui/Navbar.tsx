@@ -16,7 +16,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import cls from './Navbar.module.scss';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface INavbarProps {
   className?: string;
@@ -45,7 +45,7 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                     className={cls.createBtn}
                 >
