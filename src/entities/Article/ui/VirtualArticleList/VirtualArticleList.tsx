@@ -43,6 +43,7 @@ export const VirtualArticleList = memo((props: VirtualArticleListProps) => {
     if (view === ArticleView.BIG) {
         return (
             <Virtuoso
+                data-testid="ArticleList"
                 style={{ height: '700px' }}
                 totalCount={isLoading ? articles.length + 3 : articles.length}
                 customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
@@ -59,6 +60,7 @@ export const VirtualArticleList = memo((props: VirtualArticleListProps) => {
 
     return (
         <VirtuosoGrid
+            data-testid="ArticleList"
             style={{ height: 320 }}
             totalCount={isLoading ? articles.length + 9 : articles.length}
             customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
