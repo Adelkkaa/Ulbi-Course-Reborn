@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import withMock from 'storybook-addon-mock';
 import ArticlesPage from './ArticlesPage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
@@ -13,7 +12,6 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [withMock],
 } as ComponentMeta<typeof ArticlesPage>;
 
 const article: Article = {
